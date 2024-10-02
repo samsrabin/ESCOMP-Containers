@@ -38,6 +38,7 @@ RUN mkdir /tmp/sources && \
     wget -q http://www.mpich.org/static/downloads/3.3.2/mpich-3.3.2.tar.gz && \
     tar zxf mpich-3.3.2.tar.gz && \
     cd mpich-3.3.2 && \
+    FFLAGS="-w -fallow-argument-mismatch -O2" \
     ./configure --prefix=/usr/local && \
     make -j 2 install && \
     rm -rf /tmp/sources 
