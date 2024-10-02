@@ -75,7 +75,11 @@ RUN  cd /tmp/sources && \
      wget -q https://parallel-netcdf.github.io/Release/pnetcdf-1.12.1.tar.gz && \
      tar zxf pnetcdf-1.12.1.tar.gz && \
      cd pnetcdf-1.12.1 && \
+     FFLAGS="-w -fallow-argument-mismatch" \
+     FCLAGS="-w -fallow-argument-mismatch" \
      ./configure --prefix=/usr/local && \
+     FFLAGS="-w -fallow-argument-mismatch" \
+     FCLAGS="-w -fallow-argument-mismatch" \
      make -j 2 install && \
      ldconfig && \
      rm -rf /tmp/sources
