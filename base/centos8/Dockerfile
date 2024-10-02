@@ -56,16 +56,16 @@ RUN  mkdir /tmp/sources && \
      make -j 2 install
 
 RUN  cd /tmp/sources && \
-     wget -q ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-4.7.4.tar.gz  && \
-     tar zxf netcdf-c-4.7.4.tar.gz && \
+     wget -q https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.7.4.tar.gz && \
+     tar zxf v4.7.4.tar.gz && \
      cd netcdf-c-4.7.4 && \
      ./configure --prefix=/usr/local && \
      make -j 2 install && \
      ldconfig
 
 RUN  cd /tmp/sources && \
-     wget -q ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-fortran-4.5.3.tar.gz && \
-     tar zxf netcdf-fortran-4.5.3.tar.gz && \
+     wget -q https://github.com/Unidata/netcdf-fortran/archive/refs/tags/v4.5.3.tar.gz && \
+     tar zxf v4.5.3.tar.gz && \
      cd netcdf-fortran-4.5.3 && \
      ./configure --prefix=/usr/local && \
      make -j 2 install && \
