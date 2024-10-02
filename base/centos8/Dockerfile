@@ -4,8 +4,8 @@
 # A base CentOS8 install + MPI, HDF5, NetCDF and PNetCDF, as well as other core packages for escomp containers #
 ################################################################################################################
 
-# Use latest CentOS8:
-FROM centos:8
+# Use latest CentOS8 clone hosted by Oracle:
+FROM oraclelinux:8
 
 # First, we upate the default packages and install some other necessary ones - while this may give
 # some people updated versions of packages vs. others, these differences should not be numerically
