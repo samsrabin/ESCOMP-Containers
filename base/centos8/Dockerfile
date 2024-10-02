@@ -53,22 +53,25 @@ RUN  mkdir /tmp/sources && \
      tar zxf hdf5-1.12.0.tar.gz && \
      cd hdf5-1.12.0 && \
      ./configure --prefix=/usr/local && \
-     make -j 2 install && \
-     cd /tmp/sources && \
+     make -j 2 install
+
+RUN  cd /tmp/sources && \
      wget -q ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-c-4.7.4.tar.gz  && \
      tar zxf netcdf-c-4.7.4.tar.gz && \
      cd netcdf-c-4.7.4 && \
      ./configure --prefix=/usr/local && \
      make -j 2 install && \
-     ldconfig && \
-     cd /tmp/sources && \
+     ldconfig
+
+RUN  cd /tmp/sources && \
      wget -q ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-fortran-4.5.3.tar.gz && \
      tar zxf netcdf-fortran-4.5.3.tar.gz && \
      cd netcdf-fortran-4.5.3 && \
      ./configure --prefix=/usr/local && \
      make -j 2 install && \
-     ldconfig && \
-     cd /tmp/sources && \
+     ldconfig
+
+RUN  cd /tmp/sources && \
      wget -q https://parallel-netcdf.github.io/Release/pnetcdf-1.12.1.tar.gz && \
      tar zxf pnetcdf-1.12.1.tar.gz && \
      cd pnetcdf-1.12.1 && \
